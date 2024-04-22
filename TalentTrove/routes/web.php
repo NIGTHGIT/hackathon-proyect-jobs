@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $datos = Http::get("http://country.io/names.json");
+    $datos_decode =  json_decode($datos, true);
+    sort($datos_decode);
+    return view('welcome', compact('datos_decode'));
 });
