@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('tipo_skill');
             $table->unsignedBigInteger('id_usuario');
             // Si necesitas agregar más columnas, puedes hacerlo aquí
-            $table->foreign('id_usuario')->references('id')->on('usuario')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
-      
+
         });
     }
 

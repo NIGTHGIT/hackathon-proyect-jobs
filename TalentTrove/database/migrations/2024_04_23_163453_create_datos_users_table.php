@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datos_users', function (Blueprint $table) {
+        Schema::create('datos_de_usuarios', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();$table->string('Pais_que_reside');
+           $table->string('Pais_que_reside');
             $table->integer('Edad');
             $table->string('Telefono');
             $table->text('Algo_que_le_quiera_decir')->nullable();

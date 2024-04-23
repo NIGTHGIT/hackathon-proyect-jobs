@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuario_empleadors', function (Blueprint $table) {
-            $table->id();
+        Schema::create('usuario_empleador', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->text('nombre_completo');
+            $table->text('correo');
+            $table->text('password');
+            // Agrega más columnas según sea necesario
             $table->timestamps();
         });
     }

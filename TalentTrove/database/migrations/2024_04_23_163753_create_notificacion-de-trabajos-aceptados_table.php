@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_puesto_trabajo');
             $table->unsignedBigInteger('id_usuario_empleador');
             // Si necesitas agregar más columnas, puedes hacerlo aquí
-            $table->foreign('id_usuario')->references('id')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
 
             $table->timestamps();
         });

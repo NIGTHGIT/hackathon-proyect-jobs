@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('h_a_s_t_a#', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo_idioma');
+            $table->unsignedBigInteger('id_trabajo');
+            // Agregar más columnas según sea necesario
+
+            // Agregar restricción de clave foránea para id_trabajo
+            $table->foreign('id_trabajo')->references('id')->on('trabajos')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

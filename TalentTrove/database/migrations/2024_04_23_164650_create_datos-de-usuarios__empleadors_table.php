@@ -13,8 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datos-de-usuarios__empleadors', function (Blueprint $table) {
+        Schema::create('datos-de-usuarios__empleador', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre_empresa');
+            $table->string('actividad');
+            $table->string('telefono');
+            $table->text('mensaje');
+            $table->string('url_web')->nullable();
+            $table->integer('empleados_trabajando');
+            $table->unsignedBigInteger('id_usuario_empleador');
+            $table->foreign('id_usuario_empleador')->references('id')->on('usuario_empleador')->onDelete('cascade');
             $table->timestamps();
         });
     }
