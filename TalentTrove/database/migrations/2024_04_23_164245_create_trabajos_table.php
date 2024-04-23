@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo_trabajo');
             $table->string('tiempo');
-            $table->enum('formato', ['presencia', 'hibrido', 'semi presencial']);
+            $table->enum('formato', ['Presencial', 'Hibrido', 'Virtual']);
             $table->decimal('salario', 10, 2)->nullable();
             $table->string('categoria');
             $table->text('descripcion_trabajo');
