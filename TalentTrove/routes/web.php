@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
-
+use App\Http\Controllers\empresa\authControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,6 @@ Route::get('/', function () {
     sort($datos_decode);
     return view('welcome', compact('datos_decode'));
 });
+
+
+Route::get('/empresa/dashboard', [authControler::class, 'dashboard'])->name('empresa.dashboard');
